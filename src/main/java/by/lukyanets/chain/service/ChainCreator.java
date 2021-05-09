@@ -32,4 +32,12 @@ public class ChainCreator {
         var paragraphs = new ParagraphSplitProcessor(sentences);
         return new FileReadProcessor(paragraphs);
     }
+
+    public ChainedProcessor createChainWordCount() {
+        var counts = new WordCountProcessor(null);
+        var words = new WordSplitProcessor(counts);
+        var sentences = new SentenceSplitProcessor(words);
+        var paragraphs = new ParagraphSplitProcessor(sentences);
+        return new FileReadProcessor(paragraphs);
+    }
 }
