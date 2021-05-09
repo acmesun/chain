@@ -24,4 +24,12 @@ public class ChainCreator {
         var paragraphs = new ParagraphSplitProcessor(sentences);
         return new FileReadProcessor(paragraphs);
     }
+
+    public ChainedProcessor createChainSentenceFilter() {
+        var filter = new SentenceLengthFilterProcessor(null, 25);
+        var words = new WordSplitProcessor(filter);
+        var sentences = new SentenceSplitProcessor(words);
+        var paragraphs = new ParagraphSplitProcessor(sentences);
+        return new FileReadProcessor(paragraphs);
+    }
 }
