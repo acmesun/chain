@@ -50,4 +50,13 @@ public class ChainTest {
         System.out.println(text.getText());
 
     }
+
+    @Test
+    public void createChainCharCounterTest() {
+        var chain = new ChainCreator().createChainCharCount();
+        var text = chain.process(new Token(Util.findAbsolutePath("text.txt")));
+
+        System.out.println(text.getText());
+
+    }
 }
