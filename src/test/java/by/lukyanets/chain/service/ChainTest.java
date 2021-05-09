@@ -14,4 +14,13 @@ public class ChainTest {
         System.out.println(text.getText());
 
     }
+
+    @Test
+    public void createChainSortedTest() {
+        var chain = new ChainCreator().createChainParagraphsSorted();
+        var text = chain.process(new Token(Util.findAbsolutePath("text.txt")));
+
+        System.out.println(text.getText());
+
+    }
 }

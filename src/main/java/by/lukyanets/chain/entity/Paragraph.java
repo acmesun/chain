@@ -23,4 +23,14 @@ public class Paragraph implements TextHolder {
         var paragraphs = innerText.stream().map(text -> text.split(splitter)).collect(toList());
         return new Paragraph(paragraphs);
     }
+
+    @Override
+    public int size() {
+        return innerText.size();
+    }
+
+    public List<? extends TextHolder> getInnerTexts() {
+        return new ArrayList<>(innerText);
+    }
+
 }
