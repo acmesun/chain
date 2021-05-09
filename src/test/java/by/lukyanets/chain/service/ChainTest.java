@@ -41,4 +41,13 @@ public class ChainTest {
         System.out.println(text.getText());
 
     }
+
+    @Test
+    public void createChainCounterTest() {
+        var chain = new ChainCreator().createChainWordCount();
+        var text = chain.process(new Token(Util.findAbsolutePath("text.txt")));
+
+        System.out.println(text.getText());
+
+    }
 }
