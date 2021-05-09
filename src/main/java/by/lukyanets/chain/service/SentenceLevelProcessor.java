@@ -2,10 +2,11 @@ package by.lukyanets.chain.service;
 
 import by.lukyanets.chain.entity.Node;
 import by.lukyanets.chain.entity.TextHolder;
-import by.lukyanets.chain.entity.Token;
 
 import java.util.List;
+import java.util.stream.Stream;
 
+import static by.lukyanets.chain.entity.HolderType.SENTENCE;
 import static java.util.stream.Collectors.toList;
 
 public abstract class SentenceLevelProcessor extends ChainedProcessor {

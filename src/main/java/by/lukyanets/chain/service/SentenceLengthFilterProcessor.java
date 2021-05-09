@@ -4,6 +4,7 @@ import by.lukyanets.chain.entity.HolderType;
 import by.lukyanets.chain.entity.Node;
 import by.lukyanets.chain.entity.TextHolder;
 
+import static by.lukyanets.chain.entity.HolderType.PARAGRAPH;
 import static java.util.stream.Collectors.toList;
 
 public class SentenceLengthFilterProcessor extends SentenceLevelProcessor {

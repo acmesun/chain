@@ -7,7 +7,7 @@ public interface TextHolder {
 
     String getText();
 
-    TextHolder split(Function<String, Collection<String>> splitter);
+    TextHolder split(Function<String, Collection<String>> splitter, HolderType nodeType);
 
     int size();
 

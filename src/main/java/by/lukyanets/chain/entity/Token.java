@@ -33,7 +33,4 @@ public class Token implements TextHolder {
         return HolderType.WORD;
     }
 
-    public Token(String text) {
-        this.text = text;
-    }
 }

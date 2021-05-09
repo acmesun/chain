@@ -6,6 +6,7 @@ import by.lukyanets.chain.entity.TextHolder;
 
 import java.util.Comparator;
 
+import static by.lukyanets.chain.entity.HolderType.PARAGRAPH;
 import static java.util.stream.Collectors.toList;
 
 public class SortBySizeProcessor extends ChainedProcessor {
