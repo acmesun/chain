@@ -15,7 +15,7 @@ public class FileReadProcessor extends ChainedProcessor {
     @Override
     protected TextHolder processInner(TextHolder toProcess) {
         try {
-            String fileData = String.join("\n", Files.readAllLines(Paths.get(toProcess.getText())));
+            String fileData = String.join(" ", Files.readAllLines(Paths.get(toProcess.getText())));
             return new Token(fileData);
         } catch (IOException e) {
             return null;

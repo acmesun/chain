@@ -4,7 +4,8 @@ public class ChainCreator {
 
     public ChainedProcessor createChain() {
         var words = new WordSplitProcessor(null);
-        var paragraphs = new ParagraphSplitProcessor(words);
+        var sentences = new SentenceSplitProcessor(words);
+        var paragraphs = new ParagraphSplitProcessor(sentences);
         return new FileReadProcessor(paragraphs);
     }
 }

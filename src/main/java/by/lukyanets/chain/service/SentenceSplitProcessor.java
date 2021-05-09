@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class SentenceSplitProcessor extends ChainedProcessor{
+public class SentenceSplitProcessor extends ChainedProcessor {
+    private final Pattern BY_SENTENCE = Pattern.compile("[A-ZА-Я].+?(\\.\\.\\.|\\.|!|\\?)(?=$| +[A-Zа-я])");
 
     public SentenceSplitProcessor(Processor next) {
         super(next);
@@ -14,6 +15,12 @@ public class SentenceSplitProcessor extends ChainedProcessor{
 
     @Override
     protected TextHolder processInner(TextHolder toProcess) {
-        return null;
+        return toProcess.split(this::splitBySentences);
+    }
+
+    private List<String> splitBySentences(String text) {
+        return BY_SENTENCE.matcher(text).results()
+                .map(it -> it.group(0))
+                .collect(Collectors.toList());
     }
 }

@@ -11,6 +11,6 @@ public class ParagraphSplitProcessor extends ChainedProcessor {
 
     @Override
     protected TextHolder processInner(TextHolder toProcess) {
-        return toProcess.split(str -> Arrays.asList(str.split("\n")));
+        return toProcess.split(str -> Arrays.asList(str.split("\t| {4}")));
     }
 }
