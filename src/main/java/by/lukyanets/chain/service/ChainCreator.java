@@ -16,4 +16,12 @@ public class ChainCreator {
         var paragraphs = new ParagraphSplitProcessor(sentences);
         return new FileReadProcessor(paragraphs);
     }
+
+    public ChainedProcessor createChainLongestWord() {
+        var longestWord = new LongestTokenProcessor(null);
+        var words = new WordSplitProcessor(longestWord);
+        var sentences = new SentenceSplitProcessor(words);
+        var paragraphs = new ParagraphSplitProcessor(sentences);
+        return new FileReadProcessor(paragraphs);
+    }
 }
