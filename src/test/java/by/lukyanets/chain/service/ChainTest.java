@@ -23,4 +23,13 @@ public class ChainTest {
         System.out.println(text.getText());
 
     }
+
+    @Test
+    public void createChainLongestTest() {
+        var chain = new ChainCreator().createChainLongestWord();
+        var text = chain.process(new Token(Util.findAbsolutePath("text.txt")));
+
+        System.out.println(text.getText());
+
+    }
 }
