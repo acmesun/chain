@@ -8,4 +8,6 @@ public interface TextHolder {
     String getText();
 
     TextHolder split(Function<String, Collection<String>> splitter);
+
+    int size();
 }

@@ -8,4 +8,12 @@ public class ChainCreator {
         var paragraphs = new ParagraphSplitProcessor(sentences);
         return new FileReadProcessor(paragraphs);
     }
+
+    public ChainedProcessor createChainParagraphsSorted() {
+        var words = new WordSplitProcessor(null);
+        var sorted = new SortBySizeProcessor(words);
+        var sentences = new SentenceSplitProcessor(sorted);
+        var paragraphs = new ParagraphSplitProcessor(sentences);
+        return new FileReadProcessor(paragraphs);
+    }
 }
