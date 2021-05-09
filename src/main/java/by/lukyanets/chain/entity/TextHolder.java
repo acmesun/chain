@@ -10,4 +10,6 @@ public interface TextHolder {
     TextHolder split(Function<String, Collection<String>> splitter);
 
     int size();
+
+    HolderType getType();
 }

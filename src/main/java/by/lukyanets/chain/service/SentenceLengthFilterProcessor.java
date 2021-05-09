@@ -1,6 +1,7 @@
 package by.lukyanets.chain.service;
 
-import by.lukyanets.chain.entity.Paragraph;
+import by.lukyanets.chain.entity.HolderType;
+import by.lukyanets.chain.entity.Node;
 import by.lukyanets.chain.entity.TextHolder;
 
 import static java.util.stream.Collectors.toList;
@@ -19,6 +20,6 @@ public class SentenceLengthFilterProcessor extends SentenceLevelProcessor {
                 .stream()
                 .filter(it -> it.size() >= minLength)
                 .collect(toList());
-        return new Paragraph(filtered);
+        return new Node(filtered, PARAGRAPH);
     }
 }
