@@ -32,4 +32,13 @@ public class ChainTest {
         System.out.println(text.getText());
 
     }
+
+    @Test
+    public void createChainFilterTest() {
+        var chain = new ChainCreator().createChainSentenceFilter();
+        var text = chain.process(new Token(Util.findAbsolutePath("text.txt")));
+
+        System.out.println(text.getText());
+
+    }
 }
