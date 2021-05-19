@@ -1,13 +1,12 @@
 package by.lukyanets.chain.service;
 
 import by.lukyanets.chain.entity.TextHolder;
-import by.lukyanets.chain.entity.Token;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public abstract class ChainedProcessor implements Processor {
     private final Processor next;
-    private final Logger logger = LogManager.getLogger(Token.class);
+    private final Logger logger = LogManager.getLogger(ChainedProcessor.class);
 
 
     public ChainedProcessor(Processor next) {

@@ -4,6 +4,8 @@ import by.lukyanets.chain.entity.HolderType;
 import by.lukyanets.chain.entity.Node;
 import by.lukyanets.chain.entity.TextHolder;
 import by.lukyanets.chain.entity.Token;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,12 +13,15 @@ import java.util.stream.Collectors;
 import static java.util.stream.Collectors.toList;
 
 public class WordCountProcessor extends ChainedProcessor {
+    private final Logger logger = LogManager.getLogger(WordCountProcessor.class);
+
     public WordCountProcessor(Processor next) {
         super(next);
     }
 
     @Override
     protected TextHolder processInner(TextHolder toProcess) {
+        logger.info("Words counting process.");
         var map = findAllWords(toProcess)
                 .stream()
                 .map(it -> it.getText().toLowerCase())
