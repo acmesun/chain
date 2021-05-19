@@ -21,6 +21,4 @@ public class LongestTokenProcessor extends SentenceLevelProcessor {
     private int findLongestWord(TextHolder sentence) {
         return ((Node) sentence).getInnerTexts().stream().mapToInt(it -> it.getText().length()).max().orElseThrow();
     }
-
-
 }

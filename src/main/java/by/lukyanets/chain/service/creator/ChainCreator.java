@@ -1,4 +1,6 @@
-package by.lukyanets.chain.service;
+package by.lukyanets.chain.service.creator;
+
+import by.lukyanets.chain.service.*;
 
 public class ChainCreator {
 

@@ -1,6 +1,7 @@
 package by.lukyanets.chain.service;
 
 import by.lukyanets.chain.entity.Token;
+import by.lukyanets.chain.service.creator.ChainCreator;
 import by.lukyanets.chain.util.Util;
 import org.testng.annotations.Test;
 

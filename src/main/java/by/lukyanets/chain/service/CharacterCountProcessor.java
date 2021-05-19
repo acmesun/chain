@@ -3,6 +3,8 @@ package by.lukyanets.chain.service;
 import by.lukyanets.chain.entity.Node;
 import by.lukyanets.chain.entity.TextHolder;
 import by.lukyanets.chain.entity.Token;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,12 +13,15 @@ import static by.lukyanets.chain.entity.HolderType.CHAPTER;
 import static by.lukyanets.chain.entity.HolderType.PARAGRAPH;
 
 public class CharacterCountProcessor extends SentenceLevelProcessor {
+    private final Logger logger = LogManager.getLogger(CharacterCountProcessor.class);
+
     public CharacterCountProcessor(Processor next) {
         super(next);
     }
 
     @Override
     protected TextHolder processInner(TextHolder toProcess) {
+        logger.info("Inner process to find count of vowels and consonants information.");
         var counts = getSentences(toProcess).stream()
                 .map(it -> new Node(List.of(it, new Token(getCounts(it.getText().toLowerCase()))), PARAGRAPH))
                 .collect(Collectors.toList());
@@ -36,7 +41,6 @@ public class CharacterCountProcessor extends SentenceLevelProcessor {
                 }
             }
         }
-
         return String.format("Consonants: %d; Vowels: %d", consonants, vowels);
     }
 

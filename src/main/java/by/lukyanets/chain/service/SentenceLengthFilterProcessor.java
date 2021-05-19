@@ -1,6 +1,5 @@
 package by.lukyanets.chain.service;
 
-import by.lukyanets.chain.entity.HolderType;
 import by.lukyanets.chain.entity.Node;
 import by.lukyanets.chain.entity.TextHolder;
 
