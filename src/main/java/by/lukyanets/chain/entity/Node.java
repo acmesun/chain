@@ -41,5 +41,4 @@ public class Node implements TextHolder {
     public List<? extends TextHolder> getInnerTexts() {
         return new ArrayList<>(innerText);
     }
-
 }

@@ -32,5 +32,4 @@ public class Token implements TextHolder {
     public HolderType getType() {
         return HolderType.WORD;
     }
-
 }

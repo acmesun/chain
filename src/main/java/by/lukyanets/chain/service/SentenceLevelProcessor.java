@@ -23,5 +23,4 @@ public abstract class SentenceLevelProcessor extends ChainedProcessor {
         }
         return List.of();
     }
-
 }
